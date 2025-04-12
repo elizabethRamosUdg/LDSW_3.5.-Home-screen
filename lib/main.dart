@@ -15,14 +15,24 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const HomePage(textoBienvenida: 'Bienvenido!!'),
+      home: const HomePage(
+        titulo: '3.5. Home screen',
+        textoBienvenida: 'Bienvenido!!',
+      ),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.textoBienvenida});
+  // Constructor
+  const HomePage({
+    super.key,
+    required this.textoBienvenida,
+    required this.titulo,
+  });
+  // Variables
   final String textoBienvenida;
+  final String titulo;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -33,7 +43,25 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(widget.textoBienvenida),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, // Centrar los text
+          children: [
+            Text(
+              widget.titulo,
+              style: TextStyle(
+                fontSize: 32, // Tamaño
+                fontWeight: FontWeight.bold, // Para hacerlo más grueso
+              ),
+            ),
+            Text(
+              widget.textoBienvenida,
+              style: TextStyle(
+                fontSize: 25, // Tamaño
+                fontWeight: FontWeight.bold, // Para hacerlo más grueso
+              ),
+            ),
+          ],
+        ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
