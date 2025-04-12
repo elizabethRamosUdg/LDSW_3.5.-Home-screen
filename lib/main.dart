@@ -42,27 +42,37 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center, // Centrar los text
-          children: [
-            Text(
-              widget.titulo,
-              style: TextStyle(
-                fontSize: 32, // Tamaño
-                fontWeight: FontWeight.bold, // Para hacerlo más grueso
-              ),
-            ),
-            Text(
-              widget.textoBienvenida,
-              style: TextStyle(
-                fontSize: 25, // Tamaño
-                fontWeight: FontWeight.bold, // Para hacerlo más grueso
-              ),
-            ),
-          ],
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/wp.jpg'), // Ruta de la imagen
+            fit: BoxFit.cover, // Ajustar imagen para cubrir toda la pantalla
+          ),
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center, // Centrar los text
+            children: [
+              Text(
+                widget.titulo,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 43, // Tamaño
+                  fontWeight: FontWeight.bold, // Para hacerlo más grueso
+                ),
+              ),
+              Text(
+                widget.textoBienvenida,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30, // Tamaño
+                  fontWeight: FontWeight.bold, // Para hacerlo más grueso
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
